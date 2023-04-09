@@ -1,0 +1,1 @@
+# terumo-image-retrieval-core-service
