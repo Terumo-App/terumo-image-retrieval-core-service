@@ -1,0 +1,1 @@
+docker run --name terumo-image-retrieval-core-service -p5001:5001 terumo-image-retrieval-core-service 

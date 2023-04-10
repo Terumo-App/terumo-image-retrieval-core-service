@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+pydantic = "*"
+python-multipart = "*"
+pillow = "*"
+requests = "*"
+
+[dev-packages]
+pytest = "*"
+pytest-cov = "*"
+blue = "*"
+isort = "*"
+taskipy = "*"
+
+[requires]
+python_version = "3.10"
+python_full_version = "3.10.4"
