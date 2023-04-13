@@ -33,11 +33,11 @@ async def process_image(body: ImagePayload):
 
     # Make a POST request to another endpoint with the image data and format
     model_urls = [
-        "http://127.0.0.1:5000/predict",
-        "http://127.0.0.1:5000/predict",
-        "http://127.0.0.1:5000/predict",
-        "http://127.0.0.1:5000/predict",
-        "http://127.0.0.1:5000/predict",
+        "http://service-model-a:5000/predict",
+        "http://service-model-a:5000/predict",
+        "http://service-model-a:5000/predict",
+        "http://service-model-a:5000/predict",
+        "http://service-model-a:5000/predict",
         ]
     
     payload = {
@@ -63,13 +63,13 @@ async def process_image(body: ImagePayload):
     for i, res in enumerate(responses):
         search_query[f'model_{i+1}'] = res[0]["confidence"]
 
+    url = "http://service-search:5003/attribute-query"
+    res = requests.post(url, headers=headers, json={"data": 1 })
+    data = res.json()
+    print(data)
 
 
-
-    print(search_query)
-    print(responses)
-
-    return {'message': 'Image processed successfully', 'result':search_query}
+    return {'message': 'Image processed successfully', 'result':data}
 
 
 @app.get("/health", response_model=HealthCheckResult)
