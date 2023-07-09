@@ -33,8 +33,8 @@ async def process_image(body: ImagePayload):
 
     # Make a POST request to another endpoint with the image data and format
     model_urls = [
-        # "http://service-model-a:5000/predict",
-        "http://localhost:5000/predict",
+        "http://service-model-a:5000/predict",
+        # "http://localhost:5000/predict",
 
         ]
     
